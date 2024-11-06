@@ -43,4 +43,11 @@ describe("StringCalculatorAdd", () => {
         expect(result).toBe(6);
     });
 
+    test('shouldReturnSumWhenInputHasDiffDelimeter', () => {
+        // When
+        const result = calc.add("//[***]\n1***2***3");
+        // Then
+        expect(result).toBe(6);
+    });
+
 });
