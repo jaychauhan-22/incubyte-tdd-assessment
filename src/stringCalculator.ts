@@ -13,12 +13,22 @@ export class StringCalculator {
         // Split the numbers by delimeter ","
         const nums = numbers.split(",");
 
-        // adding non-negative numbers and handling negative numbers
+        const negativeNums: string[] = [];
+
+        // Adding non-negative numbers and handling negative numbers
         for (const num of nums) {
             if (num !== "") {
                 const n = parseInt(num, 10);
+                if (n < 0) {
+                    negativeNums.push(num);
+                }
                 result += n;
             }
+        }
+        
+        // Throw Exception when negative numbers are found
+        if (negativeNums.length > 0) {
+            throw new Error(`negatives not allowed: ${negativeNums.join(", ")}`);
         }
 
         return result;
