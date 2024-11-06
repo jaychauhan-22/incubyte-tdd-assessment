@@ -67,4 +67,24 @@ describe("StringCalculatorAdd", () => {
         expect(result).toBe(26);
     });
 
+    test('shouldReturnSumWhenInputHasCustomDelimitersAndMultipleLines', () => {
+        // When
+        const result = calc.add("//[*][%]\n1*2%3");
+        // Then
+        expect(result).toBe(6);
+    });
+
+    test('shouldThrowExceptionWhenInputHasSingleNegativeNumber', () => {
+        // Then
+        expect(() => calc.add("-5")).toThrow("negatives not allowed: -5");
+    });
+    
+    test('shouldIgnoreSingleNumberGreaterThan1000', () => {
+        // When
+        const result = calc.add("1001");
+        // Then
+        expect(result).toBe(0);
+    });
+    
+
 });
