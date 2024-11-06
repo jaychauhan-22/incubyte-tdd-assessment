@@ -60,4 +60,11 @@ describe("StringCalculatorAdd", () => {
         expect(() => calc.add("-1,-2")).toThrow("negatives not allowed: -1, -2");
     });
 
+    test('shouldIgnoreValueWhenInputContainsValueGreaterThan1000', () => {
+        // When
+        const result = calc.add("23,1001,3");
+        // Then
+        expect(result).toBe(26);
+    });
+
 });
