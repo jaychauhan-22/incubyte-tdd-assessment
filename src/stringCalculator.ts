@@ -7,6 +7,9 @@ export class StringCalculator {
             return 0;
         }
 
+        // Replace non numeric characters with ","
+        numbers = numbers.replace(/[^0-9-]+/g, ",");
+
         // Split the numbers by delimeter ","
         const nums = numbers.split(",");
 
