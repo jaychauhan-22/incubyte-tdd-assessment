@@ -36,4 +36,11 @@ describe("StringCalculatorAdd", () => {
         expect(result).toBe(91);
     });
 
+    test('shouldReturnSumWhenInputHasNewLine', () => {
+        // When
+        const result = calc.add("1\n2,3");
+        // Then
+        expect(result).toBe(6);
+    });
+
 });
