@@ -50,4 +50,14 @@ describe("StringCalculatorAdd", () => {
         expect(result).toBe(6);
     });
 
+    test('shouldThrowExceptionWhenInputHasSingleNegativeNumber', () => {
+        // Then
+        expect(() => calc.add("-1,2")).toThrow("negatives not allowed: -1");
+    });
+
+    test('shouldThrowExceptionWhenInputHasMultipleNegativeNumber', () => {
+        // Then
+        expect(() => calc.add("-1,-2")).toThrow("negatives not allowed: -1, -2");
+    });
+
 });
