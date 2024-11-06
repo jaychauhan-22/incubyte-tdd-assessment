@@ -22,7 +22,9 @@ export class StringCalculator {
                 if (n < 0) {
                     negativeNums.push(num);
                 }
-                result += n;
+                else if (n <= 1000) {
+                    result += n;
+                }
             }
         }
         
