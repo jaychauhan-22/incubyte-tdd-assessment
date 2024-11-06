@@ -21,5 +21,19 @@ describe("StringCalculatorAdd", () => {
         // Then
         expect(result).toBe(1);
     });
-    
+
+    test('shouldReturnSumWhenInputHasTwoNumber', () => {
+        // When
+        const result = calc.add("1,2");
+        // Then
+        expect(result).toBe(3);
+    });
+
+    test('shouldReturnSumWhenInputHasMultipleNumber', () => {
+        // When
+        const result = calc.add("1,2,3,10,32,43");
+        // Then
+        expect(result).toBe(91);
+    });
+
 });
